@@ -1,3 +1,4 @@
+<!-- HEADER Menu Bar/Page Loader -->
 <div class="loader">
 </div>
 <div class="home">

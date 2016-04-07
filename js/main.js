@@ -1,34 +1,20 @@
-// hide loader
+/*Author: Jesse Rock
+Site: OOMDO.com
+Date: 4/1/16*/
+
+// hide main load screen
 $(window).load(function() {
 	$('.loader').fadeOut(1000);
+	setTimeout(function(){
+		$('.home_content_splitter').addClass('close_split');
+	}, 300);
+
 });
 
-$('.menu_bar, .who_page_overlay').on('mouseover', function(){
-	$('.who_page .who_page_overlay').removeClass('slide_this_right slide_this_left');
-});
-
-$('.the-button, .page-contact').on('click', function() {
-	$('.back_video').addClass('super_index1');
-	$('.main_wrap').addClass('super_index2');
-	$('.site_wrap').toggleClass('warp');
-	$('.site_wrap').fadeToggle(900);
-	$('.nav_container, .nav_contain_back, .top_row_nav, .bottom_row_nav, .warp_speed').fadeToggle();
-	$('.menu_toggle, .home').removeClass('color_white');
-	$('.menu_toggle, .home').addClass('color_black');
-});
-
-$('.toggle').click(function(e) {
-	var toggle = this;
-	e.preventDefault();
-	$(toggle).toggleClass('toggle--on').toggleClass('toggle--off').addClass('toggle--moving');
-	setTimeout(function() {
-		$(toggle).removeClass('toggle--moving');
-	}, 200)
-});
-
+//open navigation
 $('.menu_toggle, .menu_foot span').on('click', function() {
 	$('.back_video').removeClass('super_index1');
-		$('.main_wrap').removeClass('super_index2');
+	$('.main_wrap').removeClass('super_index2');
 
 	var screenWidth = $(window).width();
 	if(screenWidth > 762){
@@ -39,15 +25,14 @@ $('.menu_toggle, .menu_foot span').on('click', function() {
 	$('.menu_toggle, .home').addClass('color_white');
 	$('.site_wrap').removeClass('warp');
 	$('.site_wrap').fadeIn();
-
 	$('.mobile_nav_container, .mobile_nav_back').toggleClass('mobile_nav_open');
-
+	// $('.mob_nav_wrap').toggle();
+	// $('.mob_nav_wrap').toggleClass('mob_nav_back');
 });
 
-
-
-
-$('.our_digs').on('click', function(){
+//our digs btn on culture page
+$(document).on('click', '.our_digs_btn', function(){
+	$('.our_digs').removeClass('our_digs_btn');
 	$('.team, .leadership, .our_digs').removeClass('team_btn');
 	$('.team').addClass('slide_page_right');
 	setTimeout(function(){
@@ -55,67 +40,99 @@ $('.our_digs').on('click', function(){
 		$('.culture_title').addClass('shift_culture_title');
 			$('.culture_title h1').addClass('culture_h1');
 			$('.page_header').addClass('our_digs_header');
-	},400);
+			$('.header_page_overlay').addClass('header_overlay_our_digs');
+	},200);
 	setTimeout(function(){
-
 		$('.culture_display_info').fadeOut();
 		$('.hide_head').hide();
 		$('.culture_head_2').show();
 		$('.our_digs').addClass('slide_wide');
+	},400);
+	setTimeout(function(){
+		$('.culture_page_overlay').css('cursor', 'default');
+		$('.oom_page_2 .page_content_section, .inner_page, .culture_page_overlay').addClass('white_background');
+		$('.our_digs_content').delay(200).fadeIn();
 	},800);
 });
 
-$('.leadership').on('click', function(){
-	$('.team, .leadership, .our_digs').removeClass('team_btn');
+//leadership btn on culture page
+$(document).on('click', '.leadership_btn', function(){
+	$('.leadership').removeClass('leadership_btn');
 	$('.team').addClass('slide_page_right');
+	$('.team, .our_digs').fadeOut(1000);
 	setTimeout(function(){
 		$('.our_digs').addClass('slide_page_left');
 		$('.culture_title').addClass('shift_culture_title');
 		$('.culture_title h1').addClass('culture_h1');
 		$('.page_header').addClass('leadership_header');
-	},400);
+		$('.header_page_overlay').addClass('header_overlay_leadership');
+	},200);
 	setTimeout(function(){
-
 		$('.culture_display_info').fadeOut();
 		$('.hide_head').hide();
 		$('.culture_head_3').show();
 		$('.leadership').addClass('slide_wide_2');
-	},800);
-});
-
-$(document).on('click', '.team_btn', function(){
-	$('.leadership, .our_digs').fadeOut(1000);
-	$('.team, .leadership, .our_digs').removeClass('team_btn');
-	$('.our_digs').addClass('slide_page_left');
-	setTimeout(function(){
-		$('.leadership').addClass('slide_page_left');
-			$('.culture_title').addClass('shift_culture_title');
-			$('.culture_title h1').addClass('culture_h1');
-			$('.page_header').addClass('team_header');
 	},400);
-	setTimeout(function(){
-
-		$('.culture_display_info').fadeOut();
-		$('.team_content').delay(500).fadeIn();
-		$('.hide_head').hide();
-		$('.culture_head_4').show();
-		$('.team').addClass('slide_wide_3');
-
-	},800);
 	setTimeout(function(){
 		$('.culture_page_overlay').css('cursor', 'default');
 		$('.oom_page_2 .page_content_section, .inner_page, .culture_page_overlay').addClass('white_background');
-
-		oomPeople();
-
-	},1300);
+		oomOwners();
+		$('.leadership_content').delay(200).fadeIn();
+	},600);
+	setTimeout(function(){
+		$('.leader_img').addClass('stretch_img');
+	},1000);
 });
 
+//leader hover effects
+$('.leader_1').on('mouseover', function(){
+	$('.leader_1 .own_name, .leader_1 .own_name p').addClass('own_info_show_left');
+});
+$('.leader_1').on('mouseleave', function(){
+	$('.leader_1 .own_name, .leader_1 .own_name p').removeClass('own_info_show_left');
+});
+$('.leader_2').on('mouseover', function(){
+	$('.leader_2 .own_name, .leader_2 .own_name p').addClass('own_info_show_right');
+});
+$('.leader_2').on('mouseleave', function(){
+	$('.leader_2 .own_name, .leader_2 .own_name p').removeClass('own_info_show_right');
+});
+
+//open team page
+$(document).on('click', '.team_btn', function(){
+	$('.team').removeClass('team_btn');
+	$('.our_digs').addClass('slide_page_left');
+	$('.leadership, .our_digs').fadeOut(1000);
+	setTimeout(function(){
+	  $('.leadership').addClass('slide_page_left');
+		$('.culture_title').addClass('shift_culture_title');
+		$('.culture_title h1').addClass('culture_h1');
+		$('.page_header').addClass('team_header');
+		$('.header_page_overlay').addClass('header_overlay_team');
+	},200);
+	setTimeout(function(){
+		$('.culture_display_info').fadeOut();
+		$('.hide_head').hide();
+		$('.culture_head_4').show();
+		$('.team').addClass('slide_wide_3');
+	},400);
+	setTimeout(function(){
+		$('.culture_page_overlay').css('cursor', 'default');
+		$('.oom_page_2 .page_content_section, .inner_page, .culture_page_overlay').addClass('white_background');
+		$('.team_content').delay(200).fadeIn()
+		oomPeople();
+	},600);
+});
+
+//close culture sub categories
 $('.culture_title, .home, .page-1, .page-2, .page-3, .page-4, .page-5, .page-6').on('click', function(){
+	$('.leader_img').removeClass('stretch_img');
 	$('.team_content ul').empty();
-	$('.team, .leadership, .our_digs').addClass('team_btn');
+	$('.team').addClass('team_btn');
+	$('.our_digs').addClass('our_digs_btn');
+	$('.leadership').addClass('leadership_btn');
 	$('.oom_page_2 page_content_section, .inner_page, .culture_page_overlay').removeClass('white_background');
-	$('.hide_head').hide();
+	$('.hide_head, .leadership_content, .our_digs_content').hide();
 	$('.culture_title').removeClass('shift_culture_title');
 	$('.culture_head_1').show();
 	$('.our_digs, .leadership, .team').removeClass('slide_wide slide_wide_2	slide_wide_3 slide_page_left slide_page_right');
@@ -125,13 +142,18 @@ $('.culture_title, .home, .page-1, .page-2, .page-3, .page-4, .page-5, .page-6')
 	$('.leadership, .our_digs, .team').show();
 	$('.culture_title h1').removeClass('culture_h1');
 	$('.page_header').removeClass('team_header leadership_header our_digs_header');
+	$('.header_page_overlay').removeClass('header_overlay_our_digs');
+	$('.header_page_overlay').removeClass('header_overlay_team');
+	$('.header_page_overlay').removeClass('header_overlay_leadership');
 });
 
+//oom owners
 var oom_owners = [
 	{name: 'Michael Donovan', description: 'Description', img: 'assets/employeePhotos/michael.png'},
 	{name: 'Ryan DeBoom', description: 'Description', img: 'assets/employeePhotos/ryan.png'}
 ];
 
+//oom employees
 var oom_people = [
 	{name: 'Jessica Baker-Colver', description: 'PPC • At OOMDO since 2013 \“I am Mrs. Luke Bryan, he just doesn’t know it yet.”', img: 'assets/employeePhotos/jessica.png'},
 	{name: 'Christa Bramberger', description: 'PPC • At OOMDO since 2013 “I am Mrs. Luke Bryan, he just doesn’t know it yet.”', img: 'assets/employeePhotos/christa.png'},
@@ -155,9 +177,8 @@ var oom_people = [
 	{name: 'Your Name', description: 'A new career awaits!<br>Click to view current openings', img: 'assets/employeePhotos/new_user.jpg'}
 ];
 
-
+//oom colors
 var oomColors = ['rgba(152, 255, 62, 0.8)', 'rgba(255, 182, 0, 0.8)', 'rgba(2, 219, 255, 0.8)', 'rgba(224, 0, 121, 0.8)', 'rgba(183, 15, 255, 0.8)'];
-
 
 var num_of_oom_people = oom_people.length;
 var num_of_oom_owners = oom_owners.length;
@@ -182,5 +203,24 @@ function oomPeople(){
 		}else{
 			$('.team_content ul').append('<li class="people_container"><div><img src="' + oom_people[i].img + '"><div class="people_info" style="background:' + randomColor + '"><div class="center_info"><h1>' + oom_people[i].name + '</h1><p>' + oom_people[i].description + '</p></div></div></div></li>');
 		}
+	}
+}
+
+
+
+
+
+
+function oomOwners(){
+	// $('.leadership_content').empty();
+
+
+
+	for(i = 0; i < num_of_oom_owners; i++)
+	{
+
+		var randomNum = Math.floor((Math.random() * 4) + 1);
+		var randomColor = oomColors[randomNum];
+
 	}
 }

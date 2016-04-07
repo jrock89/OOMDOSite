@@ -1,3 +1,4 @@
+<!-- FOOTER -->
 <div class="col-md-4 social_foot">
   <div class="inner_foot foot_1">
     <div class="center_info">
@@ -19,7 +20,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>
 <div class="col-md-4 contact_foot">
@@ -38,7 +38,6 @@
         <a href="mailto:info@oomdo.com"><i class="fa  fa-envelope-o"></i>  info@oomdo.com</a>
       </div>
     </div>
-
   </div>
 </div>
 <div class="col-md-4 menu_foot">
@@ -64,6 +63,5 @@
         work for us
       </div>
     </div>
-
   </div>
 </div>

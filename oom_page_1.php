@@ -1,17 +1,16 @@
+<!-- oom page 1 - who we are -->
 <div class="oom_page oom_page_1">
   <div class="row no_pad_mar" style="background:#fff;">
     <div class="col-md-6 no_pad_mar">
       <div class="row no_pad_mar">
         <div class="col-md-12 no_pad_mar who_page who_1" data-who="1">
-
-              <div class="who_wrap">
-                <div class="who_page_overlay">
-                  <div class="center_info">
-                    <h1 style="color:#f2f2f2;">About Us/Header-Hero</h1>
-                  </div>
-                </div>
+          <div class="who_wrap">
+            <div class="who_page_overlay">
+              <div class="center_info">
+                <h1 style="color:#f2f2f2;">About Us/Header-Hero</h1>
               </div>
-
+            </div>
+          </div>
         </div>
       </div>
       <div class="row no_pad_mar">
@@ -41,14 +40,12 @@
               </div>
             </div>
           </div>
-
           <div class="who_info">
             <div class="center_info">
                 Simply put, we DO!
                 The OOMDO Team will DO the work that needs to be done. We are one of the most responsive digital vendors in the industry. This means we DO it right, DO it fast, and DO it because it counts. Whether you are fed up with your current agency that can’t seem to DO what you ask of them, or simply looking to take your business or dealership to the next level, it’s time to contact OOMDO. OOMDO Knows: How to DO!
             </div>
           </div>
-
         </div>
       </div>
       <div class="row no_pad_mar">

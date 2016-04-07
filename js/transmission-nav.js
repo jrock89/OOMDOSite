@@ -1,3 +1,27 @@
+/*Author: Jesse Rock
+Site: Transmission Menu Navigation
+Date: 4/1/16*/
+
+
+
+
+// hover menu bar - background white non-transparent
+$('.menu_bar, .who_page_overlay').on('mouseover', function(){
+	$('.who_page .who_page_overlay').removeClass('slide_this_right slide_this_left');
+});
+
+//yellow contact button on navigation menu
+$('.the-button, .page-contact').on('click', function() {
+	$('.back_video').addClass('super_index1');
+	$('.main_wrap').addClass('super_index2');
+	$('.site_wrap').toggleClass('warp');
+	$('.site_wrap').fadeToggle(900);
+	$('.nav_container, .nav_contain_back, .top_row_nav, .bottom_row_nav, .warp_speed').fadeToggle();
+	$('.menu_toggle, .home').removeClass('color_white');
+	$('.menu_toggle, .home').addClass('color_black');
+});
+
+
 //**************************  MY ************************** FUNCTIONS **************************
 function removeAllShiftClasses() {
 	$('.shifter').removeClass('shift_dwn_full shift_dwn_mid shift_up_mid shift_up_full shift_left_mid shift_left_full shift_right_mid shift_right_full shift_neutral');
@@ -17,6 +41,10 @@ function menuWindowClose(colorShow, colorHide) {
 		// $('.menu_toggle, .home').addClass('color_' + colorShow);
 		// $('.menu_toggle, .home').removeClass('color_' + colorHide);
 		$('.menu_bar').fadeIn();
+		$('.main_wrap').scrollTop(0);
+		scrollPagesTop();
+
+
 	}
 function checkNeutral(){
 	$('.shifter').addClass('shift_neutral_left');
@@ -41,10 +69,11 @@ function checkNeutral(){
 
 	//**************************  HOME ************************** ACTIONS **************************
 $('.home').on('click', function() {
+$('.home_content_splitter').addClass('close_split');
 	$('.home i, .menu_toggle i').removeClass('blackOutMenu');
 	$('.menu_bar').hide();
-	$('.main_wrap').scrollTop(0);
-	scrollPagesTop();
+
+
 	removeAllShiftClasses();
 	removeAllTransClasses();
 	$('.menu_toggle, .home').removeClass('color_black');
@@ -68,7 +97,7 @@ $('.home').on('click', function() {
 			$('.nav_container, .nav_contain_back, .top_row_nav, .bottom_row_nav, .warp_speed').fadeOut();
 			$('.menu_toggle, .home').addClass('color_white');
 			$('.menu_toggle, .home').removeClass('color_black');
-
+$('.mob_nav_wrap').fadeIn();
 		}, 900);
 		$('.shifter').attr('data-pos', '0');
 	}
@@ -81,6 +110,7 @@ $('.home').on('click', function() {
 			$('.nav_container, .nav_contain_back, .top_row_nav, .bottom_row_nav, .warp_speed').fadeOut();
 			$('.menu_toggle, .home').addClass('color_white');
 			$('.menu_toggle, .home').removeClass('color_black');
+			$('.mob_nav_wrap').fadeIn();
 		}, 450);
 	}
 	//page 3 to home
@@ -97,6 +127,7 @@ $('.home').on('click', function() {
 			$('.nav_container, .nav_contain_back, .top_row_nav, .bottom_row_nav, .warp_speed').fadeOut();
 			$('.menu_toggle, .home').addClass('color_white');
 			$('.menu_toggle, .home').removeClass('color_black');
+			$('.mob_nav_wrap').fadeIn();
 		}, 900);
 		$('.shifter').attr('data-pos', '0');
 	}
@@ -113,6 +144,7 @@ $('.home').on('click', function() {
 			$('.nav_container, .nav_contain_back, .top_row_nav, .bottom_row_nav, .warp_speed').fadeOut();
 			$('.menu_toggle, .home').addClass('color_white');
 			$('.menu_toggle, .home').removeClass('color_black');
+			$('.mob_nav_wrap').fadeIn();
 		}, 900);
 		$('.shifter').attr('data-pos', '0');
 	}
@@ -125,6 +157,7 @@ $('.home').on('click', function() {
 			$('.nav_container, .nav_contain_back, .top_row_nav, .bottom_row_nav, .warp_speed').fadeOut();
 			$('.menu_toggle, .home').addClass('color_white');
 			$('.menu_toggle, .home').removeClass('color_black');
+			$('.mob_nav_wrap').fadeIn();
 		}, 450);
 	}
 	//page 6 to home
@@ -141,17 +174,20 @@ $('.home').on('click', function() {
 			$('.nav_container, .nav_contain_back, .top_row_nav, .bottom_row_nav, .warp_speed').fadeOut();
 			$('.menu_toggle, .home').addClass('color_white');
 			$('.menu_toggle, .home').removeClass('color_black');
+			$('.mob_nav_wrap').fadeIn();
 		}, 900);
 		$('.shifter').attr('data-pos', '0');
 	}
 });
 //**************************  PAGE 1 ************************** ACTIONS **************************
 $('.page-1').click(function(e) {
-  $('.main_wrap').scrollTop(0);
+	$('.home_content_splitter').removeClass('close_split');
+	$('.mob_nav_wrap').fadeOut();
+
 	if ($('.shifter').attr('data-pos') !== '1') {
 		removeAllShiftClasses();
 		removeAllTransClasses();
-		scrollPagesTop();
+
 	}
 	//page home to 1
 	if ($('.shifter').attr('data-pos') === '0') {
@@ -271,11 +307,13 @@ $('.page-1').click(function(e) {
 });
 //**************************  PAGE 2 ************************** ACTIONS **************************
 $('.page-2').click(function(e) {
-  $('.main_wrap').scrollTop(0);
+	$('.home_content_splitter').removeClass('close_split');
+	$('.mob_nav_wrap').fadeOut();
+
 	if ($('.shifter').attr('data-pos') !== '2') {
 		removeAllShiftClasses();
 		removeAllTransClasses();
-		scrollPagesTop();
+
 	}
 	//home to page 2
 	if ($('.shifter').attr('data-pos') === '0') {
@@ -378,11 +416,13 @@ $('.page-2').click(function(e) {
 });
 //**************************  PAGE 3 ************************** ACTIONS **************************
 $('.page-3').click(function(e) {
-  $('.main_wrap').scrollTop(0);
+	$('.home_content_splitter').removeClass('close_split');
+	$('.mob_nav_wrap').fadeOut();
+
 	if ($('.shifter').attr('data-pos') !== '3') {
 		removeAllShiftClasses();
 		removeAllTransClasses();
-		scrollPagesTop();
+
 	}
 	//home to 3
 	if ($('.shifter').attr('data-pos') === '0') {
@@ -506,11 +546,13 @@ $('.page-3').click(function(e) {
 });
 //**************************  PAGE 4 ************************** ACTIONS **************************
 $('.page-4').click(function(e) {
-  $('.main_wrap').scrollTop(0);
+	$('.home_content_splitter').removeClass('close_split');
+	$('.mob_nav_wrap').fadeOut();
+
 	if ($('.shifter').attr('data-pos') !== '4') {
 		removeAllShiftClasses();
 		removeAllTransClasses();
-		scrollPagesTop();
+
 	}
 	//home to 4
 	if ($('.shifter').attr('data-pos') === '0') {
@@ -632,11 +674,13 @@ $('.page-4').click(function(e) {
 });
 //**************************  PAGE 5 ************************** ACTIONS **************************
 $('.page-5').click(function(e) {
-  $('.main_wrap').scrollTop(0);
+	$('.home_content_splitter').removeClass('close_split');
+	$('.mob_nav_wrap').fadeOut();
+
 	if ($('.shifter').attr('data-pos') !== '5') {
 		removeAllShiftClasses();
 		removeAllTransClasses();
-		scrollPagesTop();
+
 	}
 	//home to page 5
 	if ($('.shifter').attr('data-pos') === '0') {
@@ -740,11 +784,13 @@ $('.page-5').click(function(e) {
 });
 //**************************  PAGE 6 ************************** ACTIONS **************************
 $('.page-6').click(function(e) {
-  $('.main_wrap').scrollTop(0);
+	$('.home_content_splitter').removeClass('close_split');
+	$('.mob_nav_wrap').fadeOut();
+
 	if ($('.shifter').attr('data-pos') !== '6') {
 		removeAllShiftClasses();
 		removeAllTransClasses();
-		scrollPagesTop();
+
 	}
 	//home to 6
 	if ($('.shifter').attr('data-pos') === '0') {
