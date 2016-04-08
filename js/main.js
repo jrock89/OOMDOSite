@@ -2,24 +2,74 @@
 Site: OOMDO.com
 Date: 4/1/16*/
 
+//
+// $('.navTrigger').click(function(){
+//   $(this).toggleClass('active');
+// });
+	var screenWidth = $(window).width();
+if(screenWidth < 762){
+	$('.menu_toggle, .home').hide();
+}
+
+
+
+
 // hide main load screen
 $(window).load(function() {
-	$('.loader').fadeOut(1000);
+	$('.loader').fadeOut(1500);
 	setTimeout(function(){
 		$('.home_content_splitter').addClass('close_split');
 	}, 300);
+	setTimeout(function(){
+		$('.desktop_home img').addClass('underline_desktop_img');
+$('.underline_desktop_img').addClass('underline_slam');
+	}, 1200);
+
+
+if(screenWidth > 762){
+
+
+	setTimeout(function(){
+		$('.explore_oomdo_wrap').fadeIn(900);
+	}, 2200);
+
+
+
+	setTimeout(function(){
+		$('.menu_toggle i').addClass('font_explode');
+	}, 2200);
+	setTimeout(function(){
+		$('.menu_toggle i').removeClass('font_explode');
+	}, 2400);
+	setTimeout(function(){
+		$('.menu_toggle i').addClass('font_explode');
+	}, 2600);
+	setTimeout(function(){
+		$('.menu_toggle i').removeClass('font_explode');
+	}, 2800);
+}
+
+
 
 });
 
+
+
 //open navigation
-$('.menu_toggle, .menu_foot span').on('click', function() {
+$('.menu_toggle, .menu_foot span, .explore_oomdo_wrap').on('click', function() {
 	$('.back_video').removeClass('super_index1');
 	$('.main_wrap').removeClass('super_index2');
+	// $('.main_wrap').css('overflow', 'auto');
+	$('.explore_oomdo_wrap').fadeOut();
 
-	var screenWidth = $(window).width();
 	if(screenWidth > 762){
 			$('.nav_container, .nav_contain_back, .top_row_nav, .bottom_row_nav, .warp_speed').fadeToggle();
+
+
+	}else{
+		// $('.main_wrap').css('overflow', 'hidden');
 	}
+
 
 	$('.menu_toggle, .home').removeClass('color_black');
 	$('.menu_toggle, .home').addClass('color_white');
@@ -83,19 +133,31 @@ $(document).on('click', '.leadership_btn', function(){
 		$('.leader_img').addClass('stretch_img');
 	},1000);
 });
-
+var screenWidth = $(window).width();
 //leader hover effects
 $('.leader_1').on('mouseover', function(){
-	$('.leader_1 .own_name, .leader_1 .own_name p').addClass('own_info_show_left');
+	if(screenWidth > 990){
+$('.leader_1 .own_name, .leader_1 .own_name p').addClass('own_info_show_left');
+	}
+
 });
 $('.leader_1').on('mouseleave', function(){
-	$('.leader_1 .own_name, .leader_1 .own_name p').removeClass('own_info_show_left');
+	if(screenWidth > 990){
+		$('.leader_1 .own_name, .leader_1 .own_name p').removeClass('own_info_show_left');
+	}
+
 });
 $('.leader_2').on('mouseover', function(){
-	$('.leader_2 .own_name, .leader_2 .own_name p').addClass('own_info_show_right');
+	if(screenWidth > 990){
+		$('.leader_2 .own_name, .leader_2 .own_name p').addClass('own_info_show_right');
+	}
+
 });
 $('.leader_2').on('mouseleave', function(){
-	$('.leader_2 .own_name, .leader_2 .own_name p').removeClass('own_info_show_right');
+	if(screenWidth > 990){
+		$('.leader_2 .own_name, .leader_2 .own_name p').removeClass('own_info_show_right');
+	}
+
 });
 
 //open team page
@@ -174,7 +236,7 @@ var oom_people = [
 	{name: 'Connor McManus', description: 'Development • At OOMDO since 2013 Kanye West is everything.', img: 'assets/employeePhotos/connor.png'},
 	{name: 'Jesse Rock', description: 'Development • At OOMDO since 2016 Converts caffeine into code.', img: 'assets/employeePhotos/jesse.png'},
 	{name: 'Ray Hickock', description: 'Development • At OOMDO since 2015 I really am “All-the-way-Ray.”', img: 'assets/employeePhotos/ray.png'},
-	{name: 'Your Name', description: 'A new career awaits!<br>Click to view current openings', img: 'assets/employeePhotos/new_user.jpg'}
+	{name: 'Join the Team', description: 'A new career awaits!<br>Click to view current openings', img: 'assets/employeePhotos/new_user.jpg'}
 ];
 
 //oom colors
@@ -183,12 +245,12 @@ var oomColors = ['rgba(152, 255, 62, 0.8)', 'rgba(255, 182, 0, 0.8)', 'rgba(2, 2
 var num_of_oom_people = oom_people.length;
 var num_of_oom_owners = oom_owners.length;
 
-
+//join the team button
 $(document).on('click', '.new_person', function(){
 	$('.page-6').click();
 });
 
-
+//build oomdo team page
 function oomPeople(){
 	$('.team_content ul').empty();
 	for(i = 0; i < num_of_oom_people; i++)

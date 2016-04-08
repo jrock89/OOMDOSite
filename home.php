@@ -7,5 +7,7 @@
   		agency located in Albany, NY delivering proven marketing
   		strategies and unparalleled creative while utilizing the most
   		current digital marketing tools available.</p>
+
+
   </div>
 </div>

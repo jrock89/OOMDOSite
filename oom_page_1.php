@@ -4,7 +4,7 @@
     <div class="col-md-6 no_pad_mar">
       <div class="row no_pad_mar">
         <div class="col-md-12 no_pad_mar who_page who_1" data-who="1">
-          <div class="who_wrap">
+          <div class="who_wrap_about">
             <div class="who_page_overlay">
               <div class="center_info">
                 <h1 style="color:#f2f2f2;">About Us/Header-Hero</h1>

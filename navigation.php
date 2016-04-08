@@ -54,12 +54,7 @@
     </div>
   </div>
 </div>
-<div class="mobile_nav_container">
 
-</div>
-<div class="mobile_nav_back">
-
-</div>
 <div class="nav_container">
   <div class="trans_nav_container">
     <div class="shifter" data-pos="0">

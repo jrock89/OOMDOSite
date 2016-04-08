@@ -44,6 +44,9 @@
   <div class="inner_foot foot_3">
     <div class="center_info">
       <span>Menu</span>
+      <div class="menu_item_foot home_foot">
+        home
+      </div>
       <div class="menu_item_foot page-1">
         who we are
       </div>
@@ -62,6 +65,34 @@
       <div class="menu_item_foot page-6">
         work for us
       </div>
+      <div class="menu_item_foot contact_page_foot">
+        contact
+      </div>
+
     </div>
   </div>
 </div>
+<div class="foot_bottom_bar">
+  <div class="foot_cert_wrap">
+    <img src="assets/oom_cer_1.png" alt="" />
+    <img src="assets/site_cert_2.png" alt="" />
+    <img src="assets/site_cert_3.png" alt="" />
+    <img src="assets/oom_cert_4.png" alt="" />
+  </div>
+</div>
+<!-- <div class="col-md-offset-4 col-md-4 menu_foot">
+  <div class="row">
+    <div class="col-sm-3">
+      <img src="assets/oom_cer_1.png" alt="" />
+    </div>
+    <div class="col-sm-3">
+        <img src="assets/site_cert_2.png" alt="" />
+    </div>
+    <div class="col-sm-3">
+        <img src="assets/site_cert_3.png" alt="" />
+    </div>
+    <div class="col-sm-3">
+        <img src="assets/oom_cert_4.png" alt="" />
+    </div>
+  </div>
+</div> -->

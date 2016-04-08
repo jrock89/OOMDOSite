@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>OOMDO</title>
+	<title>OOMDO | DIGITAL MARKETING DEFINED | Albany - New York</title>
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
 	<link charset="utf-8" href="css/style.css" media="screen" rel="stylesheet" title="no title">
   <link rel="icon" type="image/png" href="assets/OOMDO-O.png" />
@@ -30,6 +30,10 @@
 
 			<!-- home footer -->
 			<footer>
+				<div class="explore_oomdo_wrap">
+					<!-- <img class="transmission_gif" src="assets/transmision.gif" alt="" style=""/> -->
+					<p class="explore_oomdo"><i>Explore OOMDO</i></p>
+				</div>
 					<div class="row">
 						<?php include 'footer.php';?>
 					</div>
@@ -38,9 +42,10 @@
 
 		<!-- home page background video -->
 		<div class="back_video">
-			<video autoplay="" controls="0" height="100%">
-				<source src="assets/laptop.mov" type="video/mp4">
+			<video loop autoplay controls="0" height="100%">
+				<source src="assets/laptop.mp4" type="video/mp4">
 			</video>
+			<div class="main_back_image"></div>
 		</div>
 
 		<!-- who we are (page 1) -->
